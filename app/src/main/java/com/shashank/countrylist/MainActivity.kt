@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
 
         installSplashScreen().apply {
             setKeepOnScreenCondition {
-                !viewModel.isReady.value
+                !viewModel.isAppReady.value
             }
         }
 

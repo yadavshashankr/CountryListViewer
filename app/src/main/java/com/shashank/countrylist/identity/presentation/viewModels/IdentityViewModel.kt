@@ -26,8 +26,8 @@ class IdentityViewModel @Inject constructor(
         throwable.printStackTrace()
     }
 
-    private val _isReady: MutableStateFlow<Boolean> = MutableStateFlow(false)
-    val isReady = _isReady.asStateFlow()
+    private val _isAppReady: MutableStateFlow<Boolean> = MutableStateFlow(false)
+    val isAppReady = _isAppReady.asStateFlow()
 
     private val _verifyResult: MutableStateFlow<NetworkResult<String?>> = MutableStateFlow(NetworkResult.Error(""))
     val verifyResult = _verifyResult.asStateFlow()
@@ -39,7 +39,7 @@ class IdentityViewModel @Inject constructor(
     private fun initiateAppProcess() {
         viewModelScope.launch {
             delay(2000L)
-            _isReady.value = true
+            _isAppReady.value = true
         }
     }
 
