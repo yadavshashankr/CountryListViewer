@@ -44,7 +44,7 @@ class CountryViewModel @Inject constructor(
     }
 
     fun getCountryList() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
             _countryList.value = countryRepository.getCountryList()
             countryRepository.getCountryList()
             _isRefreshing.emit(false)
