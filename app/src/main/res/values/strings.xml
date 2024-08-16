@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Country List Viewer</string>
+    <string name="app_icon">App Icon</string>
+    <string name="error">Error</string>
+    <string name="username">Username</string>
+    <string name="username_hint">Enter username</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Search with country name or code</string>
+    <string name="country_name">"Country Name : "</string>
+    <string name="iso_2">"Country Code ISO Alpha-2 : "</string>
+    <string name="iso_3">"Country Code ISO Alpha-3 : "</string>
+    <string name="error_colon">"Error : "</string>
+    <string name="retry">Retry</string>
+    <string name="login">Login</string>
+    <string name="ok">OK</string>
+    <string name="password">Password</string>
+    <string name="password_message">Enter your password</string>
+</resources>
