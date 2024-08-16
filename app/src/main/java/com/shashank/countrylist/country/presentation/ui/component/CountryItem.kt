@@ -77,17 +77,17 @@ fun CountryItem(countryListItem: CountryListItem, countryViewModel: CountryViewM
                 Column(Modifier.padding(dimensionResource(id = R.dimen.spacer_8))) {
                     Text(
                         text = stringResource(id = R.string.country_name)+"${countryListItem.countryName}",
-                        style = MaterialTheme.typography.bodyLarge
+                        style = MaterialTheme.typography.bodyMedium
                     )
                     Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacer_20)))
                     Text(
                         text = stringResource(id = R.string.iso_2)+"${countryListItem.isoAlpha2}",
-                        style = MaterialTheme.typography.bodyLarge
+                        style = MaterialTheme.typography.bodyMedium
                     )
                     Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacer_20)))
                     Text(
                         text = stringResource(id = R.string.iso_3)+"${countryListItem.isoAlpha3}",
-                        style = MaterialTheme.typography.bodyLarge,
+                        style = MaterialTheme.typography.bodyMedium,
                     )
                 }
             }
