@@ -22,11 +22,11 @@
 
 Please refer the following videos:-
 
+  Landing   |   Dashboard                            
+:----------:|:-------------:     
+![Dark_Mode](https://github.com/user-attachments/assets/c47c3ffe-8b88-490f-b86f-16825786301a)  | ![Light_Mode](https://github.com/user-attachments/assets/75fa5f58-a2bf-45c6-b33b-1ed98b5c80bb)
 
 
-https://github.com/user-attachments/assets/de6df9da-3409-4b2a-b73a-e608fd61e5d6
 
 
-
-https://github.com/user-attachments/assets/d456c799-51e6-418e-96ca-1c84b07d688a
 
