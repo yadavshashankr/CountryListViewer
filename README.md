@@ -22,10 +22,11 @@
 
 Please refer the following videos:-
 
-  Light Mode   |   Dark Mode                            
-:-------------:|:-------------:      
-<video controls="" width="800" height="500" muted="" loop="" autoplay="">
-<source src="https://github.com/user-attachments/assets/e4eea82b-c171-4167-9ed1-5d2daf43f725" type="video/mp4">
-</video> | <video controls="" width="800" height="500" muted="" loop="" autoplay="">
-<source src="https://github.com/user-attachments/assets/afdcdf2d-d419-4a02-9b0d-fa7aca507bac" type="video/mp4">
-</video> 
+
+
+https://github.com/user-attachments/assets/de6df9da-3409-4b2a-b73a-e608fd61e5d6
+
+
+
+https://github.com/user-attachments/assets/d456c799-51e6-418e-96ca-1c84b07d688a
+
