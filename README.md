@@ -22,13 +22,13 @@
 
 Please refer the following videos:-
 
-  Landing   |   Dashboard                            
-:----------:|:-------------:     
-<img src="https://example.com/a.gif](https://github.com/user-attachments/assets/c47c3ffe-8b88-490f-b86f-16825786301a" width="600" />|<img src="https://example.com/b.gif](https://github.com/user-attachments/assets/75fa5f58-a2bf-45c6-b33b-1ed98b5c80bb" width="600" />
+  Light Mode   |   DarkMode                            
+:-------------:|:-------------:     
+![Light_Mode](https://github.com/user-attachments/assets/656ab5ee-fc78-40cf-8a02-d7c753b6354e)|![Dark_Mode](https://github.com/user-attachments/assets/49e4c0e2-b50a-4be4-9178-b074e1634328)
 
-  Landing   |   Dashboard                            
-:----------:|:-------------:     
-![alt](https://example.com/a.gif](https://github.com/user-attachments/assets/c47c3ffe-8b88-490f-b86f-16825786301a)<span style="color:white">{: width="50%"}</span>   | ![alt](https://example.com/b.gif](https://github.com/user-attachments/assets/75fa5f58-a2bf-45c6-b33b-1ed98b5c80bb)<span style="color:white">{: width="50%"}</span> 
+
+
+
 
 
 
