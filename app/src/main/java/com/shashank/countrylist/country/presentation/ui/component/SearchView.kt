@@ -36,21 +36,19 @@ fun SearchField(
     val focusManager = LocalFocusManager.current
     val leadingIcon = @Composable {
         Icon(
-            Icons.Default.Search,
-            contentDescription = "",
-            tint = MaterialTheme.colorScheme.primary
+            Icons.Default.Search, contentDescription = "", tint = MaterialTheme.colorScheme.primary
         )
     }
 
-    TextField(
-        value = value,
+    TextField(value = value,
         onValueChange = onChange,
-        modifier = modifier.fillMaxWidth().padding(horizontal = dimensionResource(id = R.dimen.spacer_10)).background(color = MaterialTheme.colorScheme.background),
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = dimensionResource(id = R.dimen.spacer_10))
+            .background(color = MaterialTheme.colorScheme.background),
         leadingIcon = leadingIcon,
         keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
-        keyboardActions = KeyboardActions(
-            onDone = { focusManager.clearFocus() }
-        ),
+        keyboardActions = KeyboardActions(onDone = { focusManager.clearFocus() }),
         placeholder = { Text(placeholder) },
         label = { Text(label) },
         singleLine = true,

@@ -24,13 +24,15 @@ object CountryModule {
 
     @Singleton
     @Provides
-    fun provideCountryHelper(): CountryHelper{
+    fun provideCountryHelper(): CountryHelper {
         return CountryHelperImpl()
     }
 
     @Singleton
     @Provides
-    fun provideCountryRepository(countryService: CountryService, countryHelper: CountryHelper): CountryRepository{
+    fun provideCountryRepository(
+        countryService: CountryService, countryHelper: CountryHelper
+    ): CountryRepository {
         return CountryRepositoryImpl(countryService, countryHelper)
     }
 }

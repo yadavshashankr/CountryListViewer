@@ -18,7 +18,9 @@ object IdentityModule {
 
     @Provides
     @Singleton
-    fun provideIdentityRepository(identityService: IdentityService, preferences: Preferences, errorHelper: ErrorHelper): IdentityRepository{
+    fun provideIdentityRepository(
+        identityService: IdentityService, preferences: Preferences, errorHelper: ErrorHelper
+    ): IdentityRepository {
         return IdentityRepositoryImpl(identityService, preferences, errorHelper)
     }
 

@@ -7,7 +7,7 @@ import javax.inject.Inject
  * generate Emojis as per the Country Code which is received from the server.
  */
 
-class CountryHelperImpl @Inject constructor(): CountryHelper {
+class CountryHelperImpl @Inject constructor() : CountryHelper {
 
     override fun getCountryEmoji(countryCode: String): String {
         val flagOffset = 0x1F1E6

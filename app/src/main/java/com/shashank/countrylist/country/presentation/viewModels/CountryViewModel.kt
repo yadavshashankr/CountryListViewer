@@ -22,23 +22,24 @@ import javax.inject.Inject
 @HiltViewModel
 class CountryViewModel @Inject constructor(
     private val countryRepository: CountryRepository
-): ViewModel() {
+) : ViewModel() {
 
-    private val coroutineExceptionHandler = CoroutineExceptionHandler{ _, throwable ->
+    private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         throwable.printStackTrace()
     }
     private val _isRefreshing = MutableStateFlow(false)
     val isRefreshing: StateFlow<Boolean>
         get() = _isRefreshing.asStateFlow()
 
-    private val _countryList: MutableStateFlow<NetworkResult<List<CountryListItem>?>> = MutableStateFlow(NetworkResult.Loading())
+    private val _countryList: MutableStateFlow<NetworkResult<List<CountryListItem>?>> =
+        MutableStateFlow(NetworkResult.Loading())
     val countryList = _countryList.asStateFlow()
 
-    fun getCountryFlag(countryCode: String): String{
+    fun getCountryFlag(countryCode: String): String {
         return countryRepository.getCountryFlag(countryCode)
     }
 
-    fun refresh(){
+    fun refresh() {
         _isRefreshing.value = true
         getCountryList()
     }

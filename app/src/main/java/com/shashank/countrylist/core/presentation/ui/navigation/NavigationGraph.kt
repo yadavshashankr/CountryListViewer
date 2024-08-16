@@ -16,12 +16,12 @@ import com.shashank.countrylist.identity.presentation.screen.LoginForm
  */
 
 @Composable
-fun NavigationGraph(navController: NavHostController){
+fun NavigationGraph(navController: NavHostController) {
     NavHost(navController = navController, startDestination = LOGIN) {
-        composable(route = LOGIN){
+        composable(route = LOGIN) {
             LoginForm(navController)
         }
-        composable(route = COUNTRY_LIST){
+        composable(route = COUNTRY_LIST) {
             CountryScreen()
         }
     }

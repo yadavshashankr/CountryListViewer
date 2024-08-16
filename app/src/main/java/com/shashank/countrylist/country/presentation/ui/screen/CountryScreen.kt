@@ -1,4 +1,5 @@
 package com.shashank.countrylist.country.presentation.ui.screen
+
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -53,14 +54,11 @@ import com.shashank.countrylist.country.presentation.viewModels.CountryViewModel
 
 @OptIn(ExperimentalMaterialApi::class, ExperimentalFoundationApi::class)
 @Composable
-fun CountryScreen(countryViewModel: CountryViewModel = hiltViewModel()){
+fun CountryScreen(countryViewModel: CountryViewModel = hiltViewModel()) {
 
-    val refreshing =
-        countryViewModel.isRefreshing.collectAsStateWithLifecycle().value
-    val pullRefreshState =
-        rememberPullRefreshState(refreshing, { countryViewModel.refresh() })
-    val countryResult =
-        countryViewModel.countryList.collectAsStateWithLifecycle().value
+    val refreshing = countryViewModel.isRefreshing.collectAsStateWithLifecycle().value
+    val pullRefreshState = rememberPullRefreshState(refreshing, { countryViewModel.refresh() })
+    val countryResult = countryViewModel.countryList.collectAsStateWithLifecycle().value
     var searchTerm by remember { mutableStateOf("") }
     val lazyColumnListState = rememberForeverLazyListState(
         key = stringResource(id = R.string.app_name).toLowerCase(
@@ -81,7 +79,7 @@ fun CountryScreen(countryViewModel: CountryViewModel = hiltViewModel()){
         ) {
             when (countryResult) {
                 is NetworkResult.Success -> {
-                    stickyHeader(key = countryResult.data){
+                    stickyHeader(key = countryResult.data) {
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -90,23 +88,30 @@ fun CountryScreen(countryViewModel: CountryViewModel = hiltViewModel()){
                             horizontalArrangement = Arrangement.Center,
                             verticalAlignment = Alignment.Top,
                         ) {
-                            SearchField(value = searchTerm , onChange ={data -> searchTerm = data }, modifier = Modifier.border( width = dimensionResource(id = R.dimen.spacer_2),
-                                color = Color.Transparent,
-                                shape = RoundedCornerShape(dimensionResource(id = R.dimen.spacer_10))
-                            ) )
+                            SearchField(
+                                value = searchTerm,
+                                onChange = { data -> searchTerm = data },
+                                modifier = Modifier.border(
+                                    width = dimensionResource(id = R.dimen.spacer_2),
+                                    color = Color.Transparent,
+                                    shape = RoundedCornerShape(dimensionResource(id = R.dimen.spacer_10))
+                                )
+                            )
                         }
                     }
 
                     val countries = countryResult.data
                     countries?.distinctBy { countryList -> countryList.id }
                         ?.let { countryListItems ->
-                            items(countryListItems.sortedBy { it.displayOrder }
-                                .filter {
-                                    it.countryName?.contains(searchTerm, ignoreCase = true) == true
-                                            || it.isoAlpha2?.contains(searchTerm, ignoreCase = true) == true
-                                            || it.isoAlpha3?.contains(searchTerm, ignoreCase = true) == true
-                                                                                       },
-                                key = { countries -> countries.id as Int }) { countryItem ->
+                            items(countryListItems.sortedBy { it.displayOrder }.filter {
+                                    it.countryName?.contains(
+                                        searchTerm, ignoreCase = true
+                                    ) == true || it.isoAlpha2?.contains(
+                                        searchTerm, ignoreCase = true
+                                    ) == true || it.isoAlpha3?.contains(
+                                        searchTerm, ignoreCase = true
+                                    ) == true
+                                }, key = { countries -> countries.id as Int }) { countryItem ->
                                 CountryItem(
                                     countryListItem = countryItem
                                 )
@@ -137,7 +142,7 @@ fun CountryScreen(countryViewModel: CountryViewModel = hiltViewModel()){
                             verticalArrangement = Arrangement.Center,
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
-                            Text(text = stringResource(id = R.string.error_colon)+"${countryResult.message}")
+                            Text(text = stringResource(id = R.string.error_colon) + "${countryResult.message}")
                             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacer_20)))
                             TextButton(modifier = Modifier.padding(top = dimensionResource(id = R.dimen.spacer_8)),
                                 onClick = {
@@ -150,17 +155,14 @@ fun CountryScreen(countryViewModel: CountryViewModel = hiltViewModel()){
                                     ) {
                                         Text(text = stringResource(id = R.string.retry))
                                     }
-                                }
-                            )
+                                })
                         }
                     }
                 }
             }
         }
         PullRefreshIndicator(
-            refreshing,
-            pullRefreshState,
-            Modifier.align(alignment = Alignment.TopCenter)
+            refreshing, pullRefreshState, Modifier.align(alignment = Alignment.TopCenter)
         )
     }
 }

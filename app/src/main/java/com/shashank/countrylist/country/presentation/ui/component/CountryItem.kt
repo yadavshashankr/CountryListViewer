@@ -35,7 +35,9 @@ import com.shashank.countrylist.country.presentation.viewModels.CountryViewModel
  */
 
 @Composable
-fun CountryItem(countryListItem: CountryListItem, countryViewModel: CountryViewModel = hiltViewModel()){
+fun CountryItem(
+    countryListItem: CountryListItem, countryViewModel: CountryViewModel = hiltViewModel()
+) {
     Card(
         modifier = Modifier
             .padding(dimensionResource(id = R.dimen.spacer_10))
@@ -45,8 +47,9 @@ fun CountryItem(countryListItem: CountryListItem, countryViewModel: CountryViewM
         elevation = CardDefaults.cardElevation(dimensionResource(id = R.dimen.spacer_5)),
         colors = CardDefaults.cardColors(MaterialTheme.colorScheme.background)
     ) {
-        Box(modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center){
+        Box(
+            modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center
+        ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
@@ -57,7 +60,8 @@ fun CountryItem(countryListItem: CountryListItem, countryViewModel: CountryViewM
                         .align(Alignment.CenterVertically)
                         .alpha(0.1f)
                         .width(IntrinsicSize.Min),
-                    style = TextStyle(fontSize = dimensionResource(id = R.dimen.text_180).value.sp
+                    style = TextStyle(
+                        fontSize = dimensionResource(id = R.dimen.text_180).value.sp
                     ),
                     text = countryViewModel.getCountryFlag(countryListItem.countryCode.toString())
                 )
@@ -76,17 +80,17 @@ fun CountryItem(countryListItem: CountryListItem, countryViewModel: CountryViewM
                 )
                 Column(Modifier.padding(dimensionResource(id = R.dimen.spacer_8))) {
                     Text(
-                        text = stringResource(id = R.string.country_name)+"${countryListItem.countryName}",
+                        text = stringResource(id = R.string.country_name) + "${countryListItem.countryName}",
                         style = MaterialTheme.typography.bodyMedium
                     )
                     Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacer_20)))
                     Text(
-                        text = stringResource(id = R.string.iso_2)+"${countryListItem.isoAlpha2}",
+                        text = stringResource(id = R.string.iso_2) + "${countryListItem.isoAlpha2}",
                         style = MaterialTheme.typography.bodyMedium
                     )
                     Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacer_20)))
                     Text(
-                        text = stringResource(id = R.string.iso_3)+"${countryListItem.isoAlpha3}",
+                        text = stringResource(id = R.string.iso_3) + "${countryListItem.isoAlpha3}",
                         style = MaterialTheme.typography.bodyMedium,
                     )
                 }

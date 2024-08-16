@@ -67,16 +67,16 @@ import com.shashank.countrylist.identity.presentation.viewModels.IdentityViewMod
  */
 
 @Composable
-fun LoginForm(navController: NavController, identityViewModel: IdentityViewModel = hiltViewModel()) {
+fun LoginForm(
+    navController: NavController, identityViewModel: IdentityViewModel = hiltViewModel()
+) {
     Surface {
         var credentials by remember { mutableStateOf(Credentials()) }
         var loadingSpinner by remember { mutableStateOf(false) }
 
         val infiniteTransition = rememberInfiniteTransition(label = "")
         val angle by infiniteTransition.animateFloat(
-            initialValue = 0F,
-            targetValue = 360F,
-            animationSpec = infiniteRepeatable(
+            initialValue = 0F, targetValue = 360F, animationSpec = infiniteRepeatable(
                 animation = tween(10000, easing = LinearEasing)
             ), label = ""
         )
@@ -94,7 +94,8 @@ fun LoginForm(navController: NavController, identityViewModel: IdentityViewModel
                     .height(dimensionResource(id = R.dimen.spacer_250))
                     .rotate(angle),
                 painter = painterResource(id = R.drawable.globe),
-                contentDescription = stringResource(id = R.string.app_icon))
+                contentDescription = stringResource(id = R.string.app_icon)
+            )
             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacer_40)))
             UsernameField(
                 value = credentials.username,
@@ -105,13 +106,14 @@ fun LoginForm(navController: NavController, identityViewModel: IdentityViewModel
                 value = credentials.password,
                 onChange = { data -> credentials = credentials.copy(password = data) },
                 submit = {
-                    if (!checkCredentials(credentials, identityViewModel)) credentials = Credentials()
+                    if (!checkCredentials(credentials, identityViewModel)) credentials =
+                        Credentials()
                 },
                 modifier = Modifier.fillMaxWidth()
             )
             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacer_20)))
 
-            if(loadingSpinner){
+            if (loadingSpinner) {
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -121,10 +123,11 @@ fun LoginForm(navController: NavController, identityViewModel: IdentityViewModel
                 ) {
                     CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
                 }
-            }else{
+            } else {
                 Button(
                     onClick = {
-                        if (!checkCredentials(credentials, identityViewModel)) credentials = Credentials()
+                        if (!checkCredentials(credentials, identityViewModel)) credentials =
+                            Credentials()
                     },
                     enabled = credentials.isNotEmpty(),
                     shape = RoundedCornerShape(dimensionResource(id = R.dimen.spacer_5)),
@@ -137,11 +140,10 @@ fun LoginForm(navController: NavController, identityViewModel: IdentityViewModel
 
         val verificationResult = identityViewModel.verifyResult.collectAsStateWithLifecycle().value
 
-        when(verificationResult){
+        when (verificationResult) {
             is NetworkResult.Error -> {
-                if (verificationResult.message.toString() != ""){
-                    AlertDialog(
-                        titleText = stringResource(id = R.string.error),
+                if (verificationResult.message.toString() != "") {
+                    AlertDialog(titleText = stringResource(id = R.string.error),
                         messageText = verificationResult.message.toString(),
                         buttonPositiveText = stringResource(id = R.string.ok),
                         buttonNegativeText = null,
@@ -153,9 +155,11 @@ fun LoginForm(navController: NavController, identityViewModel: IdentityViewModel
                 }
                 loadingSpinner = false
             }
+
             is NetworkResult.Loading -> {
                 loadingSpinner = true
             }
+
             is NetworkResult.Success -> {
                 navController.popBackStack()
                 navController.navigate(COUNTRY_LIST)
@@ -181,8 +185,7 @@ fun checkCredentials(creds: Credentials, identityViewModel: IdentityViewModel): 
 
 
 data class Credentials(
-    var username: String = "",
-    var password: String = ""
+    var username: String = "", var password: String = ""
 ) {
     fun isNotEmpty(): Boolean {
         return username.isNotEmpty() && password.isNotEmpty()
@@ -206,21 +209,16 @@ fun UsernameField(
     val focusManager = LocalFocusManager.current
     val leadingIcon = @Composable {
         Icon(
-            Icons.Default.Person,
-            contentDescription = "",
-            tint = MaterialTheme.colorScheme.primary
+            Icons.Default.Person, contentDescription = "", tint = MaterialTheme.colorScheme.primary
         )
     }
 
-    TextField(
-        value = value,
+    TextField(value = value,
         onValueChange = onChange,
         modifier = modifier,
         leadingIcon = leadingIcon,
         keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
-        keyboardActions = KeyboardActions(
-            onNext = { focusManager.moveFocus(FocusDirection.Down) }
-        ),
+        keyboardActions = KeyboardActions(onNext = { focusManager.moveFocus(FocusDirection.Down) }),
         placeholder = { Text(placeholder) },
         label = { Text(label) },
         singleLine = true,
@@ -242,9 +240,7 @@ fun PasswordField(
 
     val leadingIcon = @Composable {
         Icon(
-            Icons.Default.Key,
-            contentDescription = "",
-            tint = MaterialTheme.colorScheme.primary
+            Icons.Default.Key, contentDescription = "", tint = MaterialTheme.colorScheme.primary
         )
     }
     val trailingIcon = @Composable {
@@ -256,19 +252,15 @@ fun PasswordField(
             )
         }
     }
-    TextField(
-        value = value,
+    TextField(value = value,
         onValueChange = onChange,
         modifier = modifier,
         leadingIcon = leadingIcon,
         trailingIcon = trailingIcon,
         keyboardOptions = KeyboardOptions(
-            imeAction = ImeAction.Done,
-            keyboardType = KeyboardType.Password
+            imeAction = ImeAction.Done, keyboardType = KeyboardType.Password
         ),
-        keyboardActions = KeyboardActions(
-            onDone = { submit() }
-        ),
+        keyboardActions = KeyboardActions(onDone = { submit() }),
         placeholder = { Text(placeholder) },
         label = { Text(label) },
         singleLine = true,

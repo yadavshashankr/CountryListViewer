@@ -15,8 +15,7 @@ class RequestInterceptor(
     override fun intercept(chain: Interceptor.Chain): Response {
         val token = preferences.loadLoggedUser()?.token
         val original = chain.request()
-        val requestBuilder = original.newBuilder()
-            .header("Authorization", "Bearer $token")
+        val requestBuilder = original.newBuilder().header("Authorization", "Bearer $token")
         return chain.proceed(requestBuilder.build())
     }
 }

@@ -4,16 +4,16 @@ import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.saveable.rememberSaveable
+
 /**
  * 'rememberForeverLazyListState' remembers the scroll states of any list its listening to.
  */
 private val SaveMap = mutableMapOf<String, KeyParams>()
 
 private data class KeyParams(
-    val params: String = "",
-    val index: Int,
-    val scrollOffset: Int
+    val params: String = "", val index: Int, val scrollOffset: Int
 )
+
 @Composable
 fun rememberForeverLazyListState(
     key: String,
@@ -27,8 +27,7 @@ fun rememberForeverLazyListState(
         val savedIndex = savedValue?.index ?: initialFirstVisibleItemIndex
         val savedOffset = savedValue?.scrollOffset ?: initialFirstVisibleItemScrollOffset
         LazyListState(
-            savedIndex,
-            savedOffset
+            savedIndex, savedOffset
         )
     }
     DisposableEffect(Unit) {

@@ -9,6 +9,6 @@ interface CountryService {
 
     @Headers("Content-Type: application/json")
     @GET("api/v1/countries")
-    suspend fun getCountryList() : Response<List<CountryListItem>>
+    suspend fun getCountryList(): Response<List<CountryListItem>>
 
 }

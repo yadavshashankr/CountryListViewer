@@ -13,6 +13,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+
 /**
  * 'IdentityViewModel' helps manage state of Identity data. It also controls SplashScreen visibility.
  */
@@ -20,16 +21,17 @@ import javax.inject.Inject
 @HiltViewModel
 class IdentityViewModel @Inject constructor(
     private val identityRepository: IdentityRepository
-): ViewModel() {
+) : ViewModel() {
 
-    private val coroutineExceptionHandler = CoroutineExceptionHandler{ _, throwable ->
+    private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         throwable.printStackTrace()
     }
 
     private val _isAppReady: MutableStateFlow<Boolean> = MutableStateFlow(false)
     val isAppReady = _isAppReady.asStateFlow()
 
-    private val _verifyResult: MutableStateFlow<NetworkResult<String?>> = MutableStateFlow(NetworkResult.Error(""))
+    private val _verifyResult: MutableStateFlow<NetworkResult<String?>> =
+        MutableStateFlow(NetworkResult.Error(""))
     val verifyResult = _verifyResult.asStateFlow()
 
     init {
@@ -43,7 +45,7 @@ class IdentityViewModel @Inject constructor(
         }
     }
 
-    fun doVerification(username: String, password: String){
+    fun doVerification(username: String, password: String) {
         _verifyResult.value = NetworkResult.Loading()
 
         viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
@@ -52,7 +54,7 @@ class IdentityViewModel @Inject constructor(
         }
     }
 
-    fun clearError(){
+    fun clearError() {
         _verifyResult.value = NetworkResult.Error("")
     }
 }

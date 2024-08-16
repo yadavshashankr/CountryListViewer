@@ -52,7 +52,7 @@ class MainActivity : ComponentActivity() {
  */
 
 @Composable
-fun App(){
+fun App() {
     val navController = rememberNavController()
     NavigationGraph(navController = navController)
 }

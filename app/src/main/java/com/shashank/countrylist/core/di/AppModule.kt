@@ -47,11 +47,10 @@ object AppModule {
     @Singleton
     @Provides
     fun provideOKHttpClient(preferences: Preferences): OkHttpClient {
-        return OkHttpClient.Builder().addInterceptor(
-            HttpLoggingInterceptor().apply {
-                level = HttpLoggingInterceptor.Level.BODY
-            }
-        ).addInterceptor(RequestInterceptor(preferences)).followRedirects(false).followSslRedirects(false).build()
+        return OkHttpClient.Builder().addInterceptor(HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }).addInterceptor(RequestInterceptor(preferences)).followRedirects(false)
+            .followSslRedirects(false).build()
     }
 
     @Singleton
@@ -63,11 +62,8 @@ object AppModule {
     @Singleton
     @Provides
     fun provideRetrofit(httpClient: OkHttpClient, gson: Gson): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl(Constants.ApiProperties.BASE_URL)
-            .client(httpClient)
-            .addConverterFactory(GsonConverterFactory.create(gson))
-            .build()
+        return Retrofit.Builder().baseUrl(Constants.ApiProperties.BASE_URL).client(httpClient)
+            .addConverterFactory(GsonConverterFactory.create(gson)).build()
     }
 
 

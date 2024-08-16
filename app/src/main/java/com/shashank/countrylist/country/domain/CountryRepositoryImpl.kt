@@ -15,20 +15,19 @@ import javax.inject.Inject
  */
 
 class CountryRepositoryImpl @Inject constructor(
-    private val countryService: CountryService,
-    private val countryHelper: CountryHelper
+    private val countryService: CountryService, private val countryHelper: CountryHelper
 ) : CountryRepository {
 
     override suspend fun getCountryList(): NetworkResult<List<CountryListItem>?> {
         try {
             val response: Response<List<CountryListItem>> = countryService.getCountryList()
-            if (response.body() != null){
+            if (response.body() != null) {
                 return NetworkResult.Success(response.body())
-            }else{
+            } else {
                 val jObjError = response.errorBody()?.string()?.let { JSONObject(it) }
                 return NetworkResult.Error(jObjError?.getString("message").toString())
             }
-        }catch (e: Exception){
+        } catch (e: Exception) {
             return NetworkResult.Error(e.message.toString())
         }
     }
