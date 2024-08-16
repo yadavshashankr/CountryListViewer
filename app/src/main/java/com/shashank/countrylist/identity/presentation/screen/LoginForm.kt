@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package com.shashank.countrylist.identityModule.presentation.screen
+package com.shashank.countrylist.identity.presentation.screen
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateFloat
@@ -51,7 +51,6 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
@@ -59,7 +58,7 @@ import com.shashank.countrylist.R
 import com.shashank.countrylist.core.presentation.ui.component.AlertDialog
 import com.shashank.countrylist.core.utils.Constants.Routes.COUNTRY_LIST
 import com.shashank.countrylist.core.utils.NetworkResult
-import com.shashank.countrylist.identityModule.presentation.viewModels.IdentityViewModel
+import com.shashank.countrylist.identity.presentation.viewModels.IdentityViewModel
 
 /**
  * 'LoginForm' is a group of composable like TextFields and button, basically forming a Login page.

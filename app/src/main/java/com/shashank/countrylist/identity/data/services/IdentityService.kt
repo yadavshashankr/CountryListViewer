@@ -1,6 +1,6 @@
-package com.shashank.countrylist.identityModule.data.services
+package com.shashank.countrylist.identity.data.services
 
-import com.shashank.countrylist.identityModule.data.model.IdentityResponse
+import com.shashank.countrylist.identity.data.model.IdentityResponse
 import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded

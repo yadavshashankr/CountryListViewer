@@ -1,12 +1,12 @@
-package com.shashank.countrylist.identityModule.domain
+package com.shashank.countrylist.identity.domain
 
 import com.shashank.countrylist.BuildConfig
 import com.shashank.countrylist.core.data.preferences.Preferences
 import com.shashank.countrylist.core.utils.Constants
 import com.shashank.countrylist.core.data.helpers.ErrorHelper
 import com.shashank.countrylist.core.utils.NetworkResult
-import com.shashank.countrylist.identityModule.data.model.IdentityResponse
-import com.shashank.countrylist.identityModule.data.services.IdentityService
+import com.shashank.countrylist.identity.data.model.IdentityResponse
+import com.shashank.countrylist.identity.data.services.IdentityService
 import org.json.JSONObject
 import retrofit2.Response
 import javax.inject.Inject

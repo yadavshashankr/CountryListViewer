@@ -1,10 +1,10 @@
-package com.shashank.countrylist.identityModule.presentation.viewModels
+package com.shashank.countrylist.identity.presentation.viewModels
 
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shashank.countrylist.core.utils.NetworkResult
-import com.shashank.countrylist.identityModule.domain.IdentityRepository
+import com.shashank.countrylist.identity.domain.IdentityRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers

@@ -1,10 +1,10 @@
-package com.shashank.countrylist.identityModule.di
+package com.shashank.countrylist.identity.di
 
 import com.shashank.countrylist.core.data.preferences.Preferences
 import com.shashank.countrylist.core.data.helpers.ErrorHelper
-import com.shashank.countrylist.identityModule.domain.IdentityRepository
-import com.shashank.countrylist.identityModule.domain.IdentityRepositoryImpl
-import com.shashank.countrylist.identityModule.data.services.IdentityService
+import com.shashank.countrylist.identity.domain.IdentityRepository
+import com.shashank.countrylist.identity.domain.IdentityRepositoryImpl
+import com.shashank.countrylist.identity.data.services.IdentityService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

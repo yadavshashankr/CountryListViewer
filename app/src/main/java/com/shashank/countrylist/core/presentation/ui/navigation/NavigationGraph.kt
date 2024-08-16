@@ -7,7 +7,7 @@ import androidx.navigation.compose.composable
 import com.shashank.countrylist.core.utils.Constants.Routes.COUNTRY_LIST
 import com.shashank.countrylist.core.utils.Constants.Routes.LOGIN
 import com.shashank.countrylist.country.presentation.ui.screen.CountryScreen
-import com.shashank.countrylist.identityModule.presentation.screen.LoginForm
+import com.shashank.countrylist.identity.presentation.screen.LoginForm
 
 /**
  * 'Navigation Graph' acts as a registry of all the screens in the app.

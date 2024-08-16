@@ -1,4 +1,4 @@
-package com.shashank.countrylist.identityModule.data.model
+package com.shashank.countrylist.identity.data.model
 
 import android.os.Parcelable
 import com.google.gson.annotations.Expose

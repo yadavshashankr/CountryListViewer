@@ -34,7 +34,6 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.toLowerCase
-import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.shashank.countrylist.R
@@ -43,7 +42,6 @@ import com.shashank.countrylist.core.utils.NetworkResult
 import com.shashank.countrylist.country.presentation.ui.component.CountryItem
 import com.shashank.countrylist.country.presentation.ui.component.SearchField
 import com.shashank.countrylist.country.presentation.viewModels.CountryViewModel
-import com.shashank.countrylist.identityModule.presentation.screen.Credentials
 
 /**
  * 'CountryScreen' currently displays List of Countries. Unlike traditional UIs where Loading,

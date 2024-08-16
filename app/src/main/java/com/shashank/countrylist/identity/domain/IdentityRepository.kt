@@ -1,4 +1,4 @@
-package com.shashank.countrylist.identityModule.domain
+package com.shashank.countrylist.identity.domain
 
 import com.shashank.countrylist.core.utils.NetworkResult
 

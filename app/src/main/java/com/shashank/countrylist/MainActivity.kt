@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
 import com.shashank.countrylist.core.presentation.ui.navigation.NavigationGraph
-import com.shashank.countrylist.identityModule.presentation.viewModels.IdentityViewModel
+import com.shashank.countrylist.identity.presentation.viewModels.IdentityViewModel
 import com.shashank.countrylist.theme.CountryListAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
