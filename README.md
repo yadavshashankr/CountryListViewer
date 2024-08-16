@@ -13,6 +13,8 @@
 - **Dependency Injection** - Dagger-Hilt
 - **Reactive** - StateFLows, Flows
 - **Generics** - Kotlin-Generics
+- **Swipe-To-Refresh** - Manual update from api 
+  when swiped down from top.
 
 
 **Future scope**
