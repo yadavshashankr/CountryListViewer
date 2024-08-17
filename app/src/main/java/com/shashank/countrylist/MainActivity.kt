@@ -33,6 +33,7 @@ class MainActivity : ComponentActivity() {
             setKeepOnScreenCondition {
                 !viewModel.isAppReady.value
             }
+
         }
 
         setContent {
