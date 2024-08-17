@@ -1,8 +1,8 @@
-# Country List Viewer
+![D_mode-ezgif com-optimize (1)](https://github.com/user-attachments/assets/3c734ea4-d05d-472f-8671-f9c3e42720c1)# Country List Viewer
 
   Light Mode   |   DarkMode                            
 :-------------:|:-------------:     
-![Light_Mode](https://github.com/user-attachments/assets/42b96e2d-0d8a-4ebd-9b76-d30a081da69a)|![Dark_Mode](https://github.com/user-attachments/assets/ad842031-7aa8-4f16-bc0c-0d3669c404e4)
+![Light_Mode](https://github.com/user-attachments/assets/ef1a6cdf-00f4-4a78-baf0-5681884c4f78)|![Dark_Mode](https://github.com/user-attachments/assets/65634cef-71d1-4ecd-9b6b-325c602266cc)
 
 ### Country List Viewer is an Android Native app that helps to find detailed information about Countries. Details like Country Name, Flag, ISO-Auth-2 & 3 codes. The app has been developed to work in both Light & Dark mode. We can search any country with their Name, Code and within fraction of seconds get the needed information. To make the user interaction more engaging and intuitive, various animations and interaction flows has been implemented.
 
