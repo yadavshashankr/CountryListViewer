@@ -26,11 +26,4 @@ Please refer the following videos:-
 
   Light Mode   |   DarkMode                            
 :-------------:|:-------------:     
-![Light_Mode](https://github.com/user-attachments/assets/656ab5ee-fc78-40cf-8a02-d7c753b6354e)|![Dark_Mode](https://github.com/user-attachments/assets/49e4c0e2-b50a-4be4-9178-b074e1634328)
-
-
-
-
-
-
-
+![Light_Mode](https://github.com/user-attachments/assets/6d00f5ef-733a-40f3-bcb1-ea4a4c70b288)|![Dark_Mode](https://github.com/user-attachments/assets/8fbc1be2-7e21-4bc4-8102-9484c7d00bf9)
