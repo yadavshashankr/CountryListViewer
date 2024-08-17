@@ -18,7 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * MainActivity acts as the only activity in the project. It defines SplashScreen dismiss state, NavigationGraph initialization.
- * When the background tasks are completed we can dismiss the SplashScreen by changing the 'isReady' flag to true
+ * When the background tasks are completed we can dismiss the SplashScreen by changing the 'isAppReady' flag to true
  */
 
 @AndroidEntryPoint
