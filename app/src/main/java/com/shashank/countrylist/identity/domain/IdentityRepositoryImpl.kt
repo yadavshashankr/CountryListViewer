@@ -20,7 +20,7 @@ import javax.inject.Inject
 class IdentityRepositoryImpl @Inject constructor(
     private val identityService: IdentityService,
     private val preferences: Preferences,
-    private val dataHelper: ErrorHelper
+    private val errorHelper: ErrorHelper
 ) : IdentityRepository {
 
     override suspend fun doVerification(
@@ -42,7 +42,7 @@ class IdentityRepositoryImpl @Inject constructor(
             } else {
                 val jObjError = response.errorBody()?.string()?.let { JSONObject(it) }
                 val errorMessage = jObjError?.getString("error_description") as String
-                return NetworkResult.Error(dataHelper.formatError(errorMessage))
+                return NetworkResult.Error(errorHelper.formatError(errorMessage))
             }
         } catch (e: Exception) {
             return NetworkResult.Error(e.message.toString())
