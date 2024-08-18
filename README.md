@@ -1,6 +1,6 @@
 # Country List Viewer
 
-  Light Mode   |   DarkMode                            
+  Light Mode   |   Dark Mode                            
 :-------------:|:-------------:     
 ![Light_Mode](https://github.com/user-attachments/assets/711df366-9323-4f30-80d2-7684456db5e9)|![Dark_Mode](https://github.com/user-attachments/assets/b0eeefc7-4c30-48ae-bdae-962c8613b007) 
 
