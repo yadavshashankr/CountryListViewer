@@ -49,8 +49,7 @@ object AppModule {
     fun provideOKHttpClient(preferences: Preferences): OkHttpClient {
         return OkHttpClient.Builder().addInterceptor(HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
-        }).addInterceptor(RequestInterceptor(preferences)).followRedirects(false)
-            .followSslRedirects(false).build()
+        }).addInterceptor(RequestInterceptor(preferences)).build()
     }
 
     @Singleton
