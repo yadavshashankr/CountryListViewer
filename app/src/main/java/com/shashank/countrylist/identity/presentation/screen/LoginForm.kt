@@ -266,5 +266,4 @@ fun PasswordField(
         singleLine = true,
         visualTransformation = if (isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation()
     )
-
 }
