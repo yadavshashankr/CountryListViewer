@@ -57,7 +57,7 @@ import com.shashank.countrylist.country.presentation.viewModels.CountryViewModel
 fun CountryScreen(countryViewModel: CountryViewModel = hiltViewModel()) {
 
     val refreshing = countryViewModel.isRefreshing.collectAsStateWithLifecycle().value
-    val pullRefreshState = rememberPullRefreshState(refreshing, { countryViewModel.refresh() })
+    val pullRefreshState = rememberPullRefreshState(refreshing, { countryViewModel.refreshCountryList() })
     val countryResult = countryViewModel.countryList.collectAsStateWithLifecycle().value
     var searchTerm by remember { mutableStateOf("") }
     val lazyColumnListState = rememberForeverLazyListState(
@@ -67,7 +67,7 @@ fun CountryScreen(countryViewModel: CountryViewModel = hiltViewModel()) {
     )
 
     LaunchedEffect(key1 = Unit) {
-        countryViewModel.getCountryList()
+        countryViewModel.updateCountryList()
     }
 
     Box {
@@ -146,7 +146,7 @@ fun CountryScreen(countryViewModel: CountryViewModel = hiltViewModel()) {
                             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacer_20)))
                             TextButton(modifier = Modifier.padding(top = dimensionResource(id = R.dimen.spacer_8)),
                                 onClick = {
-                                    countryViewModel.getCountryList()
+                                    countryViewModel.updateCountryList()
                                 },
                                 content = {
                                     Row(

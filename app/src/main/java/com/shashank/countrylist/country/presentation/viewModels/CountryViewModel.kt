@@ -9,7 +9,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -27,24 +26,23 @@ class CountryViewModel @Inject constructor(
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         throwable.printStackTrace()
     }
-    private val _isRefreshing = MutableStateFlow(false)
-    val isRefreshing: StateFlow<Boolean>
-        get() = _isRefreshing.asStateFlow()
+    private val _isRefreshing : MutableStateFlow<Boolean> = MutableStateFlow(false)
+    val isRefreshing = _isRefreshing.asStateFlow()
 
     private val _countryList: MutableStateFlow<NetworkResult<List<CountryListItem>?>> =
         MutableStateFlow(NetworkResult.Loading())
     val countryList = _countryList.asStateFlow()
 
-    fun getCountryFlag(countryCode: String): String {
+    fun updateCountryFlag(countryCode: String): String {
         return countryRepository.getCountryFlag(countryCode)
     }
 
-    fun refresh() {
+    fun refreshCountryList() {
         _isRefreshing.value = true
-        getCountryList()
+        updateCountryList()
     }
 
-    fun getCountryList() {
+    fun updateCountryList() {
         viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
             _countryList.value = countryRepository.getCountryList()
             _isRefreshing.emit(false)

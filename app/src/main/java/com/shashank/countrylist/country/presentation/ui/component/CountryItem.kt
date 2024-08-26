@@ -63,7 +63,7 @@ fun CountryItem(
                     style = TextStyle(
                         fontSize = dimensionResource(id = R.dimen.text_180).value.sp
                     ),
-                    text = countryViewModel.getCountryFlag(countryListItem.countryCode.toString())
+                    text = countryViewModel.updateCountryFlag(countryListItem.countryCode.toString())
                 )
             }
 
@@ -74,7 +74,7 @@ fun CountryItem(
                     modifier = Modifier
                         .align(Alignment.CenterVertically)
                         .padding(dimensionResource(id = R.dimen.spacer_20)),
-                    text = countryViewModel.getCountryFlag(countryListItem.countryCode.toString()),
+                    text = countryViewModel.updateCountryFlag(countryListItem.countryCode.toString()),
                     style = TextStyle(fontSize = dimensionResource(id = R.dimen.text_80).value.sp),
                     textAlign = TextAlign.Center,
                 )
